@@ -72,8 +72,8 @@ mean_caffeine
 mean_smoking
 mean_exercise
 
-#그룹 1이 수면 효율성이 높고, 딥슬립 비율이 높으며며, 라이트슬립 비율이 낮게, 중간에 자다 깨는 것이 낮게 나타난다. 
-알코올 섭취량은 적고, 카페인 섭취량은 조금 더 많고(약간의 카페인 섭취량이 수면에 도움이 되는 것으로 보임), 흡연은 덜 하며, 운동 빈도가 높다.
+#그룹 1이 수면 효율성이 높고, 딥슬립 비율이 높으며, 라이트슬립 비율이 낮게, 중간에 자다 깨는 것이 낮게 나타난다. 
+# 알코올 섭취량은 적고, 카페인 섭취량은 조금 더 많고(약간의 카페인 섭취량이 수면에 도움이 되는 것으로 보임), 흡연은 덜 하며, 운동 빈도가 높다.
 
 
 # 그룹별 성별 분포 확인
@@ -87,8 +87,7 @@ table(cluster_data$Cluster, cluster_data$Gender)
 ##############
 plot(no, col = kmeans_2$cluster, pch = 16)
 
-####
-age, duration은 큰 영향이 없어(클러스터 간 차이가 별로 없음) 제외하엿음
+#age, duration은 큰 영향이 없어(클러스터 간 차이가 별로 없음) 제외
 
 
 # 그룹별 Bedtime 분류
@@ -114,8 +113,6 @@ group_2_count <- sum(sleep$Cluster == 2 & sleep$Bedtime_Class == "12시 이전")
 # 결과 출력
 print(paste("그룹 1에서 12시 이전에 잔 사람 수:", group_1_count))
 print(paste("그룹 2에서 12시 이전에 잔 사람 수:", group_2_count))
-위의 코드를 실행하면, 그
-
 
 
 
@@ -158,10 +155,9 @@ data$Bedtime_Class <- sapply(data$Bedtime, classify_bedtime)
 group_1_count <- sum(no$Cluster == 1 & no$Bedtime_Class == "12시 이전")
 group_2_count <- sum(no$Cluster == 2 & no$Bedtime_Class == "12시 이전")
 
-# 결과 출력
+# 결과
 print(paste("그룹 1에서 12시 이전에 잔 사람 수:", group_1_count))
 print(paste("그룹 2에서 12시 이전에 잔 사람 수:", group_2_count))
-위의 코드를 실행하면, 그
 
 
 
